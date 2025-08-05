@@ -17,7 +17,6 @@ type Message = {
   content: string;
 };
 const Chat = () => {
-
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const auth = useAuth();
@@ -74,6 +73,15 @@ const Chat = () => {
     };
     checkAuth();
   }, [auth]);
+
+  // Extract user initials for avatar
+  const getUserInitials = (): string => {
+      const name = auth?.user?.name || "";
+      const parts = name.trim().split(" ");
+      const firstInitial = parts[0]?.[0] || "";
+      const secondInitial = parts[1]?.[0] || "";
+      return `${firstInitial}${secondInitial}`;
+    };
   return (
     <Box
       sx={{
@@ -96,7 +104,7 @@ const Chat = () => {
           sx={{
             display: "flex",
             width: "100%",
-            height: "65vh",
+            height: "75vh",
             bgcolor: "rgb(17,29,39)",
             borderRadius: 5,
             flexDirection: "column",
@@ -112,32 +120,34 @@ const Chat = () => {
               fontWeight: 700,
             }}
           >
-            {auth?.user?.name[0]}
-            {auth?.user?.name.split(" ")[1][0]}
+            {getUserInitials()}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
-            You are talking to a ChatBOT
+            🤖 You're chatting with SmartBot
           </Typography>
-          <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 4, p: 3 }}>
-            You can ask some questions related to Knowledge, Business, Advices,
-            Education, etc. But avoid sharing personal information
+          <Typography sx={{ mx: "auto", fontFamily: "work sans ", my: 4, p: 3 }}>
+            Ask me anything about Knowledge, Business, Advice, Education, and more.
+            I'm here to help — just avoid sharing personal or sensitive information.
+          </Typography>
+          <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
+              🔘 Need a fresh start?
           </Typography>
           <Button
             onClick={handleDeleteChats}
             sx={{
-              width: "200px",
+              width: "auto",
               my: "auto",
               color: "white",
               fontWeight: "700",
               borderRadius: 3,
               mx: "auto",
-              bgcolor: red[300],
+              bgcolor: red[400],
               ":hover": {
                 bgcolor: red.A400,
               },
             }}
           >
-            Clear Conversation
+            Clear Chat
           </Button>
         </Box>
       </Box>
@@ -152,7 +162,7 @@ const Chat = () => {
         <Typography
           sx={{
             fontSize: "40px",
-            color: "white",
+            color: "rgb(248, 250, 255)",
             mb: 2,
             mx: "auto",
             fontWeight: "600",

@@ -29,9 +29,13 @@ const Signup = () => {
     }
   }, [auth]);
   return (
-    <Box width={"100%"} height={"100%"} display="flex" flex={1}>
-      <Box padding={8} mt={7} display={{ md: "flex", sm: "none", xs: "none" }}>
-        <img src="brandImage.png" alt="brand-image" style={{ width: "400px" }} />
+    <Box width={"95%"} height={"95%"} display="flex" flex={1} mt={-2}>
+      <Box padding={6} mt={6} display={{ md: "flex", sm: "none", xs: "none" }}>
+        <img
+          src="brandImage.png"
+          alt="brand-image"
+          style={{ width: "375px", height: "400px" }}
+        />
       </Box>
       <Box
         display={"flex"}
@@ -40,14 +44,13 @@ const Signup = () => {
         alignItems={"center"}
         padding={2}
         ml={"auto"}
-        mt={14}
-        mr={4}
+        mt={12}
       >
         <form
           onSubmit={handleSubmit}
           style={{
             margin: "auto",
-            padding: "30px",
+            padding: "40px",
             boxShadow: "10px 10px 20px #000",
             borderRadius: "10px",
             border: "none",
@@ -58,12 +61,14 @@ const Signup = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              width: "350px",
+              height: "350px",
             }}
           >
             <Typography
               variant="h4"
               textAlign="center"
-              padding={1}
+              padding={0.1}
               fontWeight={600}
             >
               Signup
@@ -96,4 +101,4 @@ const Signup = () => {
   );
 };
 
-export default Signup; 
+export default Signup;

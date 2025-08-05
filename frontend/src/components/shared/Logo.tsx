@@ -9,24 +9,29 @@ const Logo = () => {
             gap:"15px"
         }}
         >
-        <Link to={"/"}>
-            <img 
-            src="OpenAI.png" 
-            alt="image" 
-            width={"30px"}
-            height={"30px"}
-            className="image-inverted"
-            />
+        <Link to={"/"}  style={{ textDecoration: "none" }}>
+        <img 
+        src="OpenAI.png" 
+        alt="Deep-Chat Logo" 
+        width={"30px"}
+        height={"30px"}
+        className="image-inverted"
+        />
         </Link>
-        <Link to={"/"}><Typography sx={{
-                display:{md:"block", sm:"none", xs:"none"},
-                mr:"auto",
-                fontWeight:"800", 
-                textShadow:"2px 2px 20px #000"
-                }}
-                >
-                <span style={{fontSize:"20px"}}>DEEP</span>-Chat
-            </Typography>
+        <Link to={"/"}
+        style={{
+            textDecoration: 'none',
+            color: 'inherit',
+        }}
+        ><Typography sx={{
+            display:{md:"block", sm:"none", xs:"none"},
+            mr:"auto",
+            fontWeight:"800", 
+            textShadow:"2px 2px 20px #000"
+        }}
+        >
+        <span style={{fontSize:"20px"}}>DEEP</span>-Chat
+        </Typography>
         </Link>
         </div>
     );

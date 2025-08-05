@@ -21,16 +21,15 @@ export const generateChatCompletion = async (
         //send all chats with new one to OpenAI api
         const openai = new OpenAI({
             baseURL:"https://openrouter.ai/api/v1",
-            apiKey:process.env.OPENAI_SECRET
-            //organization:process.env.OPENAI_ORGANIZATION
-        }
-        );
+            apiKey:process.env.OPENAI_SECRET,
+        });
         const chatResponse = await openai.chat.completions.create({
             model:"deepseek/deepseek-r1:free",
             messages: chats,
             max_tokens: 2000,
-            temperature:0.7,
-            stream:false,
+            temperature: 0.7,
+            stream: false,
+            
         });
         //get latest response
         const aiMessage = chatResponse.choices[0].message;

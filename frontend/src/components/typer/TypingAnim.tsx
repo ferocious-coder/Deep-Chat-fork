@@ -6,7 +6,7 @@ const TypingAnim = () => {
       sequence={[
         "Welcome to Deep-Chat 💬",
         1000,
-        "Built With Multiple AI Models 🤖",
+        "Supports Multiple AI Models 🤖",
         2000,
         "Including ChatGPT, Deepseek, and Gemini",
         1500,
