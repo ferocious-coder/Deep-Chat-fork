@@ -10,12 +10,15 @@ config();
 const app= express();
 
 //middleware
-app.use(cors({origin:"http://localhost:5173", credentials:true}))
+app.use(cors({origin:process.env.FRONTEND_URL, credentials:true}))
 app.use(express.json());
 app.use(cookieparser(process.env.COOKEY));
 
 //not needed in production
-app.use(morgan("dev"));
+if (process.env.NODE_ENV !== 'production'){
+    app.use(morgan("dev"));
+}
+
 
 app.use("/api/v1", appRouter);
 
