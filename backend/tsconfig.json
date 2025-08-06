@@ -6,6 +6,10 @@
     "sourceMap": true,
     "outDir": "dist",
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true 
   },
-  "include": ["src/**/*.ts", "src/index.ts"]
+  "include": ["src/**/*.ts"], 
+  "exclude": ["node_modules", "dist"]
 }
