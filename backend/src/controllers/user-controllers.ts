@@ -28,7 +28,7 @@ export const userSignup = async(req:Request,res:Response,next:NextFunction) =>{
         res.clearCookie(cookie_name,{
             path: "/", 
             httpOnly:true,
-            domain:"localhost",
+            domain:process.env.HOST ,
             signed:true,
         })
 
@@ -39,7 +39,7 @@ export const userSignup = async(req:Request,res:Response,next:NextFunction) =>{
 
         res.cookie(cookie_name,token,{
             path: "/", 
-            domain:"localhost",
+            domain:process.env.HOST,
             httpOnly:true,
             signed:true,
             expires
@@ -68,7 +68,7 @@ export const userLogin = async(req:Request, res:Response, next:NextFunction) =>{
         res.clearCookie(cookie_name,{
             path: "/", 
             httpOnly:true,
-            domain:"localhost",
+            domain:process.env.HOST,
             signed:true,
         });
 
@@ -79,7 +79,7 @@ export const userLogin = async(req:Request, res:Response, next:NextFunction) =>{
 
         res.cookie(cookie_name,token,{
             path: "/", 
-            domain:"localhost",
+            domain:process.env.HOST,
             httpOnly:true,
             signed:true,
             expires
@@ -129,7 +129,7 @@ export const userLogout = async(req:Request, res:Response, next:NextFunction) =>
         res.clearCookie(cookie_name,{
             path: "/", 
             httpOnly:true,
-            domain:"localhost",
+            domain:process.env.HOST,
             signed:true,
         });
         return res
