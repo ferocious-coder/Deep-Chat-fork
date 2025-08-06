@@ -10,7 +10,7 @@ config();
 const app= express();
 
 //middleware
-app.use(cors({origin:process.env.FRONTEND_URL, credentials:true}))
+app.use(cors({origin:"https://deep-chat-two.vercel.app", credentials:true}))
 app.use(express.json());
 app.use(cookieparser(process.env.COOKEY));
 
